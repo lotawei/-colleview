@@ -8,6 +8,12 @@
 
 import UIKit
 
+public  let  rgba = UIColor(red: 240.0/255.0, green: 244.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+public  let  rgdefault = UIColor(red: 130.0/255.0, green: 130.0/255.0, blue: 130.0/255.0, alpha: 0.6)
+public  let  screenwidth = UIScreen.mainScreen().bounds.size.width
+public  let  screenheight = UIScreen.mainScreen().bounds.size.height
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
