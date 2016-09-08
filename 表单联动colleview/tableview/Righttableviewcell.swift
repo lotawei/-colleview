@@ -8,7 +8,7 @@
 //
 
 
-
+//展示数据
 class Righttableviewcell: UITableViewCell {
     var   model : FoodModel!
     

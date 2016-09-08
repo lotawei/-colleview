@@ -7,7 +7,7 @@
 //
 
 
-
+//左边部分    作为导航效果 
 class LeftTableviewCell: UITableViewCell {
     var  name:UILabel!
     var   yellview:UIView!

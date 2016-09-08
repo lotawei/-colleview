@@ -10,10 +10,10 @@
 import UIKit
 
 class TableViewController:UIViewController {
-    
+    //这个变量可以拿去做存储位置 app退出时 再次进来可以滚动在这个位置
     var   selectindex:NSInteger!
-    var   isScrolldown:Bool!
-    
+  
+    var   lastoffsety:CGFloat = 0.0
     var   lefttableview:UITableView = {
         let   rect = CGRectMake(0, 0, 80, screenheight)
         let   lefttableview =  UITableView(frame: rect, style: .Plain)
@@ -51,7 +51,7 @@ class TableViewController:UIViewController {
         
         //准备好数据
         selectindex = 0
-        isScrolldown = true
+       
         preparedata()
         
         lefttableview.rowHeight = 55;
@@ -67,7 +67,7 @@ class TableViewController:UIViewController {
         view.addSubview(lefttableview)
         
         view.addSubview(righttableview)
-        lefttableview.selectRowAtIndexPath(NSIndexPath(forRow: 0,inSection: selectindex) ,animated: true, scrollPosition: .Top)
+        lefttableview.selectRowAtIndexPath(NSIndexPath(forRow: selectindex,inSection: 0) ,animated: true, scrollPosition: .Top)
     }
     
     func preparedata()  {
@@ -163,8 +163,7 @@ extension  TableViewController:UITableViewDataSource,UITableViewDelegate{
             let   view = TableHeadView(frame: CGRectMake(0,0,screenwidth,15))
             let   afood = self.categorydata[section] as! CategoryModel
             view.name.text =  afood.name
-            //设置星星是几个星 的店 //这里模拟下如果 名字的长度大于三个字我们让他成为三星点
-         
+            //设置星星是几个星 的店
         
            
             view.addstar(afood.name.characters.count)
@@ -173,23 +172,21 @@ extension  TableViewController:UITableViewDataSource,UITableViewDelegate{
         }
         return  nil
     }
-    //判断拖拽右边的tableview 发现这个方法好使 ，能知道 怎么与左边相应联动呢
+    //判断拖拽右边的tableview，能知道 怎么与左边相应联动呢
     //那就是发现 表头的东西变了那么 左边就应该变化啦
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if ((tableView.tag == 1002) && !isScrolldown && righttableview.dragging)
-        {
+       
             selectRowAtIndexPath(section)
-        }
+        
     }
-    func tableView(tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
-        if ((righttableview == tableView) && !isScrolldown && righttableview.dragging)
-        {
-            selectRowAtIndexPath(section+1)
-        }
-    }
+    
+    
+    
     func selectRowAtIndexPath(index:NSInteger)  {
         //滑动右边处理滑动左边
-        lefttableview.scrollToRowAtIndexPath(NSIndexPath(forRow: index,inSection: 0), atScrollPosition: .Top, animated: true)
+        selectindex = index
+        lefttableview.selectRowAtIndexPath(NSIndexPath(forItem:index ,inSection: 0 ) ,animated: true, scrollPosition: .Top)
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -199,14 +196,6 @@ extension  TableViewController:UITableViewDataSource,UITableViewDelegate{
             righttableview.scrollToRowAtIndexPath(NSIndexPath(forRow: 0,inSection: self.selectindex), atScrollPosition: .Top, animated: true)
         }
     }
-    //记录右边是上滑动还是下滑动
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        var   lastoffsety:CGFloat = 0
-        let   tab = scrollView  as! UITableView
-        if tab.tag == 1002 {
-            isScrolldown = lastoffsety < scrollView.contentOffset.y
-            lastoffsety = scrollView.contentOffset.y
-        }
-    }
+  
     
 }

@@ -37,6 +37,9 @@
 		ED79074C1D80057A00161103 /* place.png in Resources */ = {isa = PBXBuildFile; fileRef = ED79074B1D80057A00161103 /* place.png */; };
 		ED79074E1D800EB800161103 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = ED79074D1D800EB800161103 /* star.png */; };
 		ED7907501D802CB800161103 /* 联动.gif in Resources */ = {isa = PBXBuildFile; fileRef = ED79074F1D802CB800161103 /* 联动.gif */; };
+		ED99D6BF1D811D9700C65DBE /* CollectionHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99D6BE1D811D9700C65DBE /* CollectionHeadView.swift */; };
+		ED99D6C11D812CF500C65DBE /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99D6C01D812CF500C65DBE /* CollectionModel.swift */; };
+		ED99D6C31D812F2300C65DBE /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99D6C21D812F2300C65DBE /* CollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		ED79074B1D80057A00161103 /* place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place.png; sourceTree = "<group>"; };
 		ED79074D1D800EB800161103 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		ED79074F1D802CB800161103 /* 联动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "联动.gif"; sourceTree = "<group>"; };
+		ED99D6BE1D811D9700C65DBE /* CollectionHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeadView.swift; sourceTree = "<group>"; };
+		ED99D6C01D812CF500C65DBE /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		ED99D6C21D812F2300C65DBE /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				ED7907041D7FCB1D00161103 /* CollectionViewController.swift */,
+				ED99D6BE1D811D9700C65DBE /* CollectionHeadView.swift */,
+				ED99D6C01D812CF500C65DBE /* CollectionModel.swift */,
+				ED99D6C21D812F2300C65DBE /* CollectionCell.swift */,
 			);
 			name = collectionview;
 			path = "表单联动colleview/collectionview";
@@ -274,9 +283,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7907281D7FCBFF00161103 /* NSData+ImageContentType.m in Sources */,
+				ED99D6BF1D811D9700C65DBE /* CollectionHeadView.swift in Sources */,
 				ED79072E1D7FCBFF00161103 /* SDWebImageManager.m in Sources */,
 				ED7907461D7FF8A600161103 /* LeftTableviewCell.swift in Sources */,
 				ED7907331D7FCBFF00161103 /* UIImageView+HighlightedWebCache.m in Sources */,
+				ED99D6C11D812CF500C65DBE /* CollectionModel.swift in Sources */,
 				ED79072C1D7FCBFF00161103 /* SDWebImageDownloader.m in Sources */,
 				ED7907341D7FCBFF00161103 /* UIImageView+WebCache.m in Sources */,
 				ED7907291D7FCBFF00161103 /* SDImageCache.m in Sources */,
@@ -290,6 +301,7 @@
 				ED79073F1D7FD56200161103 /* CategoryModel.swift in Sources */,
 				ED7907301D7FCBFF00161103 /* UIButton+WebCache.m in Sources */,
 				ED79072F1D7FCBFF00161103 /* SDWebImagePrefetcher.m in Sources */,
+				ED99D6C31D812F2300C65DBE /* CollectionCell.swift in Sources */,
 				ED79072A1D7FCBFF00161103 /* SDWebImageCompat.m in Sources */,
 				ED7907481D7FF8B900161103 /* Righttableviewcell.swift in Sources */,
 				ED7907311D7FCBFF00161103 /* UIImage+GIF.m in Sources */,
@@ -453,6 +465,7 @@
 				ED7907011D7FC9D300161103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
